@@ -206,7 +206,10 @@ def problem0a(n):
     #        Simply try a few examples to convince yourself of this.
     #        ASK FOR HELP if you do not understand this hint.
     # -------------------------------------------------------------------------
-
+    total = sum_of_digits(n)
+    if total % 2 != 0:
+        return True
+    return False
 
 def run_test_problem0b():
     """ Tests the   problem0b   function. """
