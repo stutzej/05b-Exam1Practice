@@ -3,8 +3,8 @@ PRACTICE Exam 1, problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Valerie Galluzzi, Mark Hays, Amanda Stouder, Aaron Wilkin,
-         their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues, and Liz Stutz.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -111,6 +111,11 @@ def problem2a(circle, rectangle, window):
     #    DIFFICULTY:      6
     #    TIME ESTIMATE:   10 to 15 minutes.
     # -------------------------------------------------------------------------
+    circle.attach_to(window)
+    rectangle.attach_to(window)
+    window.continue_on_mouse_click()
+    right_corner = rectangle.get_upper_right_corner()
+    line = rg.Line(right_corner, )
 
 def run_test_problem2b():
     """ Tests the  problem2b   function. """
@@ -148,7 +153,6 @@ def problem2b(rect, n, delta, win):
     """
     See   problem2b_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
-    
     What comes in:
       -- An rg.Rectangle.
       -- A positive integer n.
