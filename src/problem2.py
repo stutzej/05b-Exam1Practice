@@ -114,12 +114,15 @@ def problem2a(circle, rectangle, window):
 
     circle.attach_to(window)
     rectangle.attach_to(window)
+    window.render()
     window.continue_on_mouse_click()
     right_corner = rectangle.get_upper_right_corner()
     left_corner = rectangle.get_lower_left_corner()
     line = rg.Line(right_corner, left_corner)
-
+    line = line.arrow
     line.attach_to(window)
+    window.continue_on_mouse_click()
+
 
 
 def run_test_problem2b():
