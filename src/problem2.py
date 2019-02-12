@@ -184,7 +184,7 @@ def problem2b(rect, n, delta, win):
       :type rect:   rg.Rectangle
       :type n:      int
       :type delta:  int
-      :type win:    rg.RoseWindow
+      :type win:    rg.RoseWindow 
     """
     # -------------------------------------------------------------------------
     # DONE: 3. Implement and test this function.
