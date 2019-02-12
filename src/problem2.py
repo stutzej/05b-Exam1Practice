@@ -103,7 +103,7 @@ def problem2a(circle, rectangle, window):
       :type window:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -119,10 +119,11 @@ def problem2a(circle, rectangle, window):
     right_corner = rectangle.get_upper_right_corner()
     left_corner = rectangle.get_lower_left_corner()
     line = rg.Line(right_corner, left_corner)
-    line = line.arrow
+    line.arrow = 'last'
     line.attach_to(window)
-    window.continue_on_mouse_click()
-
+    window.render()
+    circle.fill_color = rectangle.outline_color
+    window.render()
 
 
 def run_test_problem2b():
@@ -186,7 +187,7 @@ def problem2b(rect, n, delta, win):
       :type win:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -194,6 +195,15 @@ def problem2b(rect, n, delta, win):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 25 minutes.
     # -------------------------------------------------------------------------
+    rect.attach_to(win)
+    rect_left = rect.get_upper_left_corner()
+    rect_right = rect.get_lower_right_corner()
+    for k in range(n - 1):
+        p1 = rg.Point(rect_left.x - (delta * (k + 1)), rect_left.y - (delta * (k + 1)))
+        p2 = rg.Point(rect_right.x + (delta * (k + 1)), rect_right.y + (delta * (k + 1)))
+        new_rect = rg.Rectangle(p1, p2)
+        new_rect.attach_to(win)
+    win.render()
 
 
 # -----------------------------------------------------------------------------
