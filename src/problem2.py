@@ -111,11 +111,16 @@ def problem2a(circle, rectangle, window):
     #    DIFFICULTY:      6
     #    TIME ESTIMATE:   10 to 15 minutes.
     # -------------------------------------------------------------------------
+
     circle.attach_to(window)
     rectangle.attach_to(window)
     window.continue_on_mouse_click()
     right_corner = rectangle.get_upper_right_corner()
-    line = rg.Line(right_corner, )
+    left_corner = rectangle.get_lower_left_corner()
+    line = rg.Line(right_corner, left_corner)
+
+    line.attach_to(window)
+
 
 def run_test_problem2b():
     """ Tests the  problem2b   function. """
